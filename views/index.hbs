@@ -1,0 +1,66 @@
+{{#if error}} <!-- IF there is an error, show it  -->
+  <div class="alert alert-danger">
+      <span class="glyphicon glyphicon-danger"></span> <strong>ERROR : </strong> {{error}}
+  </div>
+
+
+{{/if}}
+
+{{#if image}} <!-- IF image has been created, show it  -->
+      <div class="panel  panel-success">
+        <div class="panel-heading"><h2>This is your gif!!</h2></div>
+        <div class="panel-body">
+            <img src="images/{{image}}" alt="This will display an animated GIF" />
+        </div>
+      </div>
+{{/if}}
+
+<script type="text/javascript">
+  $('#submit-form').submit(function(){
+    $('loading').show();
+  });
+</script>
+<div class="panel  panel-info ">
+  <div class="panel-heading background-black"><h2 style="text-align:center;">The Newest Link Sharing Culture : URL2GIF</h2></div>
+  <div class="panel-body backImg">
+    <form action="/" method="post">
+
+      <div class="input-group my-input-group">
+        <form  id="submit-form">
+            <span class="input-group-addon">URL:</span>
+            <input type="text" class="form-control" name="url" placeholder="Enter Your Url...">
+            <span class="glyphicon glyphicon-link form-control-feedback"></span>
+            <span><button type="submit" class="btn btn-success col-sm-12">Generate GIF</button></span>
+
+       </form>
+       </div>
+
+
+    </form>
+    <div class="row col-sm-12">
+        <div class="col-sm-6" style="margin-bottom:5px;text-align:center">
+            <strong class="texted">Most of people can share their links as non-predictable how it looks.</strong>
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tell your congressmen you want them to be pro-internet. My Facebook post is here: <a href="https://t.co/XEmFNxGt">https://t.co/XEmFNxGt</a></p>&mdash; Mark Zuckerberg (@finkd) <a href="https://twitter.com/finkd/status/159700472020733952">January 18, 2012</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+        <div class="col-sm-6" style="text-align:center">
+          <strong class="texted">But you can share yours with URL2GIF, how it looks!</strong>
+          <blockquote class="twitter-tweet" data-lang="tr"><p lang="en" dir="ltr">Url2Gif, the newest link sharing culture, coming soon! <a href="https://t.co/v5ymTpkaMw">pic.twitter.com/v5ymTpkaMw</a></p>&mdash; H.İbrahim 🅑estil (@Hibestil) <a href="https://twitter.com/Hibestil/status/880389209361715200">29 Haziran 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="panel-footer"style="font-size:15px;text-align:center;">
+
+      <p><span class="glyphicon glyphicon-camera" style="font-size:22px;font-weight:700;"></span>  This app takes screenshots from your URL, then combines them to GIF</p>
+      <p><span class="glyphicon glyphicon-share" style="font-size:22px;font-weight:700;"></span>  Share your links with "<strong><span class="glyphicon glyphicon-link"></span>URL2GIF</strong>", more visibly more clickable!</p>
+
+    <div class="loading"><span class="glyphicon glyphicon-process"></span> Loading...</div>
+
+    </div>
+</div>
