@@ -31,4 +31,4 @@ npm start   // start your app
 ### *Todo List*
   - *DO* : Make efficient gif creator function
   - *ADD* : Add easy share buttons after the created GIF
-  - *FIX* : If user created a GIF ,a function does not ends. Find and fix it. 
+  - *FIX* : If user created a GIF ,a function does not ends. Find and fix it. [FIXED by @tahtaciburak]

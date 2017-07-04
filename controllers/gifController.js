@@ -3,7 +3,10 @@ var GIFEncoder = require('gifencoder');
 var Canvas = require('canvas');
 var fs = require('fs');
 
-var encoder = new GIFEncoder(320, 240);
+module.exports.createGif = function(urlAdress){
+  try {
+
+    var encoder = new GIFEncoder(320, 240);
 
 
 // use node-canvas
@@ -11,12 +14,7 @@ var canvas = new Canvas(320, 240);
 var ctx = canvas.getContext('2d');
 var img = new Canvas.Image;
 var Image = Canvas.Image;
-
-
-
-module.exports.createGif = function(urlAdress){
-  try {
-    console.log("IN gif controller  :"+urlAdress+".gif");
+console.log("IN gif controller  :"+urlAdress+".gif");
     // stream the results as they are available into myanimated.gif
     encoder.createReadStream().pipe(fs.createWriteStream('public/images/'+urlAdress+'.gif'));
 
@@ -34,7 +32,7 @@ module.exports.createGif = function(urlAdress){
     encoder.addFrame(ctx);
     */
     img = new Image();
-    img.src = fs.readFileSync(urlAdress+'.jpeg');
+    img.src = fs.readFileSync(urlAdress+'3.jpeg');
 
     ctx.fillStyle = '#000';
     ctx.drawImage(img, 0, 0, img.width, img.height);
@@ -51,20 +49,17 @@ module.exports.createGif = function(urlAdress){
     encoder.addFrame(ctx);
 
     img = new Image();
-    img.src = fs.readFileSync(urlAdress+'3.jpeg');
+    img.src = fs.readFileSync(urlAdress+'1.jpeg');
     ctx.fillStyle = '#000';
     ctx.drawImage(img, 0, 0, img.width, img.height);
     ctx.font = '18px Impact';
     ctx.fillText("Url2Gif", 0, 0);
     encoder.addFrame(ctx);
 
-
-
-  } catch (e) {
-      console.log("Error while runing try/catch block!");
-  } finally {
+} catch (e) {
+  console.log("Error while runing try/catch block!");
+} finally {
     encoder.finish();
-
     console.log("Finish block executed");
-  }
+}
 }
